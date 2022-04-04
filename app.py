@@ -6,7 +6,6 @@ from numpy import asarray
 import pandas as pd
 #Initialize the Flask app
 
-
 scanned_users = set()
 try:
     file = 'passes_list.xlsx'
@@ -154,4 +153,4 @@ def GetData_from_Srno():
         return jsonify('Error in Fetching data from Sr.No, '+str(e))   
     
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
