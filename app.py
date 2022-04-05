@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 from numpy import asarray
 import pandas as pd
+import os
 #Initialize the Flask app
 
 scanned_users = set()
@@ -153,4 +154,4 @@ def GetData_from_Srno():
         return jsonify('Error in Fetching data from Sr.No, '+str(e))   
     
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), use_reloader=False)
